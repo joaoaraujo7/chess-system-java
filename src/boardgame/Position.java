@@ -9,7 +9,7 @@ public class Position {
         this.column = column;
     }
 
-    public void setValues(int raw, int column){
+    public void setValues(int raw, int column) {
         this.row = raw;
         this.column = column;
     }
