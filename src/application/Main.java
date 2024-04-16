@@ -36,10 +36,17 @@ public class Main {
                 if (capturedPiece != null) {
                     captured.add(capturedPiece);
                 }
-            } catch (ChessException e) {
-                System.out.println(e.getMessage());
-                sc.nextLine();
-            }catch (InputMismatchException e) {
+                if (chessMatch.getPromoted() != null) {
+
+                    System.out.println("Enter piece for promotion (B/N/R/Q): ");
+                    String type = sc.nextLine().trim();
+                    while (!type.equalsIgnoreCase("b") && !type.equalsIgnoreCase("n") && !type.equalsIgnoreCase("r") && !type.equalsIgnoreCase("q")) {
+                        System.out.println("Invalid input. Please enter B, N, R, or Q.");
+                        type = sc.nextLine();
+                    }
+                    chessMatch.replacePromotedPiece(type);
+                }
+            } catch (ChessException | InputMismatchException e) {
                 System.out.println(e.getMessage());
                 sc.nextLine();
             }

@@ -7,9 +7,9 @@ import chess.Color;
 
 import java.util.Arrays;
 import java.util.InputMismatchException;
+
 import java.util.List;
 import java.util.Scanner;
-import java.util.stream.Collectors;
 
 public class UI {
 
@@ -62,7 +62,7 @@ public class UI {
             if (chessMatch.getCheck()) {
                 System.out.println("CHECK!");
             }
-        }else {
+        } else {
             System.out.println("CHECKMATE!");
             System.out.println("Winner: " + chessMatch.getCurrentPlayer());
             System.out.println();
